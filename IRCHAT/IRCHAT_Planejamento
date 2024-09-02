@@ -187,3 +187,69 @@ Respostas do Servidor {
         Exemplo: 411 Alice :No recipient given
     }
 }
+### Como funciona o IRC
+Comunicação entre cliente e servidor {
+    Conexão inicial {
+        O cliente IRC se conecta a um servidor IRC na porta padrão 6667. Após a conexão, o cliente pode enviar comandos e receber respostas do servidor.
+    }
+    Protocolo IRC {
+        A comunicação é baseada em texto e segue um protocolo bem definido. Cada mensagem tem um formato específico, começando com um prefixo opcional (para indicar a origem da mensagem), seguido por um comando e, finalmente, por parâmetros.
+    }
+    Mensagens e comandos {
+        Comandos comuns incluem NICK (para definir o apelido do usuário), USER (para definir informações sobre o usuário), JOIN (para entrar em um canal), PART (para sair de um canal), PRIVMSG (para enviar uma mensagem privada) e PONG (para responder a um PING do servidor).
+    }
+}
+### TCP/UDP e Sockets
+TCP {
+    Orientado a conexão {
+        O TCP estabelece uma conexão entre o cliente e o servidor antes de transmitir dados. Isso garante que ambos os lados estejam prontos para a comunicação.
+    }
+    Confiável {
+        Garante que os dados cheguem ao destino na ordem correta e sem erros. Se um pacote for perdido ou corrompido, ele é retransmitido.
+    }
+    Controle de Fluxo e Congestionamento {
+        Utiliza mecanismos para controlar o fluxo de dados e evitar congestionamentos na rede.
+    }
+    Sequência de pacotes {
+        Os pacotes são numerados e reordenados para garantir a integridade dos dados.
+    }
+    Uso Típico {
+        Protocolos de aplicação que requerem alta confiabilidade, como HTTP, FTP, e emails (SMTP, IMAP).
+    }
+}
+UDP {
+    Não Orientado a conexão {
+        Não estabelece uma conexão antes de enviar dados. Os pacotes (datagramas) são enviados independentemente e não há garantias de que chegarão ao destino.
+    }
+    Não confiável {
+        Não garante a entrega dos pacotes, nem a ordem em que eles chegam. Não há retransmissão de pacotes perdidos.
+    }
+    Sem controle de fluxos {
+        Não possui mecanismos para controlar o fluxo de dados ou congestionamento.
+    }
+    Uso Típico {
+         Protocolos onde a velocidade é mais importante que a confiabilidade, como streaming de vídeo, jogos online e DNS. Válido para ligações, pois se houver falhas, ela não te entrega os pacotes que falharam depois do envio dos outros, ou seja, se um pedaço de uma 'frase' falhar, ela ignora o que falhou. O que aconteceria no tcp é que depois de terminar aquela frase ou ligação, ele entregaria as partes que falharam(Explicando de forma simples!).
+    }
+}
+Sockets {
+    Sockets são uma abstração para a comunicação entre processos que pode ocorrer localmente ou através de uma rede. Um socket é um ponto final para enviar ou receber dados.
+    Cada socket é identificado por uma combinação de um endereço IP e um número de porta.
+    Um soquete de rede (em inglês: network socket) é um ponto final de um fluxo de comunicação entre processos através de uma rede de computadores. Hoje em dia, a maioria da comunicação entre computadores é baseada no Protocolo de Internet, portanto a maioria dos soquetes de rede são soquetes de Internet.
+}
+### Chat Cliente-Servidor
+Em um sistema cliente-servidor, um servidor centralizado gerencia e coordena a comunicação entre vários clientes. Os clientes se conectam ao servidor para enviar e receber mensagens, e o servidor é responsável por rotear essas mensagens para os clientes apropriados.
+Componentes {
+    Servidor {
+        O servidor atua como o ponto central de controle e comunicação. Ele recebe mensagens dos clientes, processa-as e as encaminha para os destinatários corretos.
+    }
+    Cliente {
+        Cada cliente é um aplicativo que se conecta ao servidor para enviar e receber mensagens. Os clientes podem ser usuários finais que interagem com a interface do chat.
+    }
+}
+### Planejamento do Projeto
+Recursos necessários {
+    1. Ferramenta de virtualização;
+    2. Uma máquina servidor IRC;
+    3. Duas máquinas clientes(CLI);
+    4. Desenvolver uma lan para essas máquinas;
+}

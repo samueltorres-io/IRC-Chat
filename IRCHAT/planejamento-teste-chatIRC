@@ -1,38 +1,3 @@
-
-### 2. Como funciona o IRC
-**Objetivo:** Compreender como o IRC opera na prática, incluindo o fluxo de mensagens e a interação entre clientes e servidores.
-
-**Tarefas:**
-- Estudar a comunicação entre cliente e servidor IRC.
-- Analisar o funcionamento dos canais e das salas de bate-papo.
-- Observar o processo de autenticação e gerenciamento de usuários.
-
-**Recursos:**
-- [Implementando o IRC em Node.js](https://hackernoon.com/implementing-the-irc-spec-in-node-js-c630b8cd5771)
-- Documentação adicional sobre o funcionamento do IRC.
-
-### 3. O que é TCP/UDP e Sockets
-**Objetivo:** Compreender os conceitos básicos de redes, especificamente os protocolos TCP e UDP, e o uso de sockets para comunicação.
-
-**Tarefas:**
-- Estudar as diferenças entre TCP (Transmission Control Protocol) e UDP (User Datagram Protocol).
-- Entender o funcionamento de sockets para comunicação de rede.
-- Implementar exemplos básicos de comunicação com TCP e UDP.
-
-**Recursos:**
-- Artigos e tutoriais sobre TCP, UDP e sockets.
-
-### 4. O que é um chat cliente-servidor
-**Objetivo:** Compreender a arquitetura cliente-servidor em sistemas de chat, onde um servidor central gerencia a comunicação entre clientes.
-
-**Tarefas:**
-- Estudar como a arquitetura cliente-servidor é implementada em sistemas de chat.
-- Identificar os papéis e responsabilidades do cliente e do servidor.
-- Analisar casos de uso e exemplos de implementação.
-
-**Recursos:**
-- Documentação sobre arquitetura cliente-servidor.
-
 ### 5. Planeamento do projeto
 **Objetivo:** Desenvolver um plano detalhado para o projeto, incluindo cronograma, recursos e metas.
 
