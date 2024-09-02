@@ -1,14 +1,3 @@
-### 1. O que é o protocolo IRC
-**Objetivo:** Entender os fundamentos do IRC (Internet Relay Chat), sua história e como ele é usado para comunicação em tempo real.
-
-**Tarefas:**
-- Estudar a especificação do IRC (RFC 1459).
-- Analisar a arquitetura básica do IRC, incluindo canais e mensagens.
-- Identificar os comandos e respostas principais do protocolo IRC.
-
-**Recursos:**
-- [RFC 1459 - Internet Relay Chat Protocol](https://datatracker.ietf.org/doc/html/rfc1459)
-- Artigos e tutoriais sobre IRC.
 
 ### 2. Como funciona o IRC
 **Objetivo:** Compreender como o IRC opera na prática, incluindo o fluxo de mensagens e a interação entre clientes e servidores.

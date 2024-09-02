@@ -1,0 +1,189 @@
+### 1. O que é o protocolo IRC
+O IRC (Internet Relay Chat) é um sistema de chat mundial que requer uma conexão à internet e um cliente de IRC, que envia e recebe mensagens através do servidor de IRC.
+
+### Especificação do IRC (RFC 1459).
+O RFC 1459 é um documento que descreve o protocolo IRC e especifica como os clientes e servidores IRC devem se comunicar para possibilitar a troca de mensagens em tempo real através de canais e mensagens privadas.
+O RFC define a estrutura das mensagens e comandos usados para interagit com o servidor IRC. Isso inclui os clientes se conectam ao servidor, como enviam mensagens para canais ou outros usuários e como gerenciam a lista de canais e usuários.
+O documento detalha os comandos que os clientes podem enviar, como /JOIN para entrar em um canal, /PART para sair de um canal, e /PRIVMSG para enviar mensagens privadas. Também descreve as respostas que o servidor envia de volta para confirmar ou informar sobre o status das ações.
+As mensagens IRC seguem um formato específico que inclui um prefixo, um comando e parâmetros adicionais. Por exemplo, uma mensagem de comando pode ser PRIVMSG #canal :Olá, mundo, onde PRIVMSG é o comando, #canal é o canal destinatário, e Olá, mundo é a mensagem enviada.
+
+### Componetes da Afrquitetura do IRC.
+Servidor IRC {
+    O servidor IRC é responsável por gerenciar as conexões dos clientes, manter o estado dos canais, rotear mensagens entre clientes e canais, e manter informações sobre usuários e canais.
+    Exemplos: UnrealIRCd, InspIRCd, IRCd.
+}
+Cliente IRC {
+    O cliente IRC é o software ou aplicativo que os usuários utilizam para se conectar aos servidores IRC. Ele permite que os usuários enviem e recebam mensagens, se juntem a canais, e realizem outras interações no IRC.
+    Exemplos: mIRC, HexChat, Irssi.
+}
+Estrutura das mensagens IRC {
+    Prefixo {
+        O prefixo geralmente é o nome do servidor ou do usuário que está enviando a mensagem. Ele pode incluir o nome do usuário, o nome do host e o número do servidor.
+    }
+    Comando {
+        O comando especifica a ação que está sendo solicitada ou realizada. Pode ser algo como JOIN, PART, PRIVMSG, NICK, etc.
+    }
+    Parâmetros {
+        Os parâmetros são os argumentos fornecidos para o comando. Por exemplo, em um comando PRIVMSG, o parâmetro pode ser o nome do canal ou do usuário e a mensagem a ser enviada.
+    }
+}
+Canais e Mensagens {
+    Canais {
+        Canais são espaços de discussão em grupo dentro do IRC. Eles têm nomes que começam com um caractere especial, como # ou &. Os usuários podem entrar e sair dos canais e enviar mensagens para todos os membros do canal.
+
+        Tipos de Canais {
+            Públicos {
+                A maioria dos canais são públicos e qualquer usuário pode se juntar a eles.
+            }
+            Privados {
+                Canais privados requerem um convite para participar e não são visíveis na lista pública de canais.
+            }
+            Protegidos com senha {
+                Canais que exigem uma senha para entrar.
+            }
+            Comandos Relacionados a Canais {
+                /JOIN <canal>: Entra em um canal.
+                /PART <canal>: Sai de um canal.
+                /TOPIC <canal> <tópico>: Define ou exibe o tópico do canal.
+            }
+        }
+    }
+    Mensagens {
+        Mensagens Privadas {
+            Enviadas diretamente de um usuário para outro, sem a necessidade de estar em um canal.
+
+            Comando: /PRIVMSG <destinatário> <mensagem>
+            Exemplo: /PRIVMSG Alice Olá, como você está?
+        }
+        Mensagens de Canal {
+            Enviadas para todos os membros de um canal específico.
+
+            Comando: /PRIVMSG <canal> <mensagem>
+            Exemplo: /PRIVMSG #geral Olá a todos!
+        }
+    }
+}
+Fluxo de Comunicação {
+    Conexão {
+        Um cliente se conecta a um servidor IRC.
+    }
+    Autenticação {
+        O cliente pode se identificar com um nick (nome de usuário) e pode opcionalmente se registrar.
+    }
+    Participação em canais {
+        O cliente pode entrar em canais e interagir com outros usuários.
+    }
+    Troca de mensagens {
+        As mensagens são trocadas em tempo real entre clientes e servidores, podendo ser direcionadas a canais ou enviados como mensagens privadas.
+    }
+}
+Protocolo de Comunicação {
+    O IRC usa um protocolo baseado em texto para comunicação. A interação entre clientes e servidores é feita através de mensagens de texto com comandos e respostas padronizadas. As mensagens são enviadas em formato de strings que seguem a estrutura especificada no RFC 1459.
+}
+
+### Comandos e Respostas principais do Protoloco IRC
+Comandos de Conexão e Autenticação {
+    NICK <nick>: Define ou altera o nome do usuário (nick).
+
+    Exemplo: NICK Alice
+    USER <username> <hostname> <servername> :<realname>: Define o nome do usuário e outras informações.
+
+    Exemplo: USER alice 0 * :Alice Doe
+    PASS <password>: Envia uma senha para autenticação, se necessário (usado em servidores que requerem autenticação).
+}
+Comandos de Canal {
+    JOIN <channel> [<key>]: Entra em um canal. Se o canal for protegido por senha, a senha deve ser fornecida como um parâmetro adicional.
+
+    Exemplo: JOIN #geral
+    Exemplo com senha: JOIN #privado senha123
+    PART <channel> [<message>]: Sai de um canal opcionalmente enviando uma mensagem de saída.
+
+    Exemplo: PART #geral
+    Exemplo com mensagem: PART #geral Até mais!
+    TOPIC <channel> [<topic>]: Define ou exibe o tópico de um canal.
+
+    Exemplo: TOPIC #geral Novo tópico: Discussão sobre IRC
+    KICK <channel> <user> [<message>]: Remove um usuário de um canal, opcionalmente enviando uma mensagem de motivo.
+
+    Exemplo: KICK #geral Bob Por comportamento inadequado
+}
+Comandos de Mensagem {
+    PRIVMSG <target> :<message>: Envia uma mensagem para um canal ou um usuário específico.
+
+    Exemplo para canal: PRIVMSG #geral Olá, pessoal!
+    Exemplo para usuário: PRIVMSG Alice Olá, Alice!
+    NOTICE <target> :<message>: Envia uma notificação para um canal ou um usuário específico, similar ao PRIVMSG, mas com uma semântica diferente que pode ser usada para mensagens de sistema ou informação.
+}
+Comandos de Informação e Gestão {
+    PONG <server>: Responde a um PING de um servidor para verificar a conexão.
+
+    Exemplo: PONG server.example.com
+    PING <server>: Solicita uma resposta de "ping" a um servidor para verificar a conectividade.
+
+    Exemplo: PING server.example.com
+    MOTD: Solicita a mensagem do dia (Message Of The Day) do servidor.
+
+    Exemplo: MOTD
+    WHO <channel>: Lista os usuários presentes em um canal.
+
+    Exemplo: WHO #geral
+    WHOIS <nick>: Fornece informações sobre um usuário específico.
+
+    Exemplo: WHOIS Alice
+    WHOWAS <nick> [<count>]: Fornece informações sobre um usuário que já estava conectado anteriormente.
+
+    Exemplo: WHOWAS Alice 5
+}
+Respostas do Servidor {
+    Respostas de Conexão {
+        001 <nick> :Welcome to the IRC Network, <nick>: Mensagem de boas-vindas ao cliente após a conexão.
+
+        Exemplo: 001 Alice :Welcome to the IRC Network, Alice
+        002 <nick> :Your host is <server>, running version <version>: Informações sobre o servidor.
+
+        Exemplo: 002 Alice :Your host is irc.example.com, running version 2.10
+        003 <nick> :This server was created <date>: Data de criação do servidor.
+
+        Exemplo: 003 Alice :This server was created 2023-01-01
+        004 <nick> <server> <version> :<info>: Informações adicionais sobre o servidor.
+
+        Exemplo: 004 Alice irc.example.com 2.10 :Feature set
+    }
+    Respostas de Canal {
+        322 <nick> <channel> <users> :<topic>: Informações sobre um canal, incluindo número de usuários e tópico.
+
+        Exemplo: 322 Alice #geral 5 :Discussão geral
+        323 <nick> <channel>: Finalização da listagem de canais.
+
+        Exemplo: 323 Alice #geral
+        331 <nick> <channel> :No topic is set: Indica que não há tópico definido para o canal.
+
+        Exemplo: 331 Alice #geral :No topic is set
+        332 <nick> <channel> :<topic>: Retorna o tópico definido para o canal.
+
+        Exemplo: 332 Alice #geral :Discussão sobre IRC
+        341 <nick> <channel> <user>: Notifica que um usuário foi convidado para um canal.
+
+        Exemplo: 341 Alice #geral Bob
+        353 <nick> = <channel> :<users>: Lista os usuários em um canal.
+
+        Exemplo: 353 Alice = #geral :Alice Bob Charlie
+        366 <nick> <channel> :End of /NAMES list: Finaliza a listagem de usuários em um canal.
+
+        Exemplo: 366 Alice #geral :End of /NAMES list
+    }
+    Respostas de Mensagens e Notificações {
+        401 <nick> <command> :No such nick/channel: Indica que um nick ou canal não foi encontrado.
+
+        Exemplo: 401 Alice Bob :No such nick/channel
+        403 <nick> <channel> :No such channel: Indica que o canal não existe.
+
+        Exemplo: 403 Alice #nonexistent :No such channel
+        404 <nick> <channel> :Cannot send to channel: Indica que a mensagem não pode ser enviada para o canal.
+
+        Exemplo: 404 Alice #geral :Cannot send to channel
+        411 <nick> :No recipient given: Indica que um comando requer um destinatário.
+
+        Exemplo: 411 Alice :No recipient given
+    }
+}
