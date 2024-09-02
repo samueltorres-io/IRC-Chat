@@ -1,0 +1,138 @@
+### 1. O que é o protocolo IRC
+**Objetivo:** Entender os fundamentos do IRC (Internet Relay Chat), sua história e como ele é usado para comunicação em tempo real.
+
+**Tarefas:**
+- Estudar a especificação do IRC (RFC 1459).
+- Analisar a arquitetura básica do IRC, incluindo canais e mensagens.
+- Identificar os comandos e respostas principais do protocolo IRC.
+
+**Recursos:**
+- [RFC 1459 - Internet Relay Chat Protocol](https://datatracker.ietf.org/doc/html/rfc1459)
+- Artigos e tutoriais sobre IRC.
+
+### 2. Como funciona o IRC
+**Objetivo:** Compreender como o IRC opera na prática, incluindo o fluxo de mensagens e a interação entre clientes e servidores.
+
+**Tarefas:**
+- Estudar a comunicação entre cliente e servidor IRC.
+- Analisar o funcionamento dos canais e das salas de bate-papo.
+- Observar o processo de autenticação e gerenciamento de usuários.
+
+**Recursos:**
+- [Implementando o IRC em Node.js](https://hackernoon.com/implementing-the-irc-spec-in-node-js-c630b8cd5771)
+- Documentação adicional sobre o funcionamento do IRC.
+
+### 3. O que é TCP/UDP e Sockets
+**Objetivo:** Compreender os conceitos básicos de redes, especificamente os protocolos TCP e UDP, e o uso de sockets para comunicação.
+
+**Tarefas:**
+- Estudar as diferenças entre TCP (Transmission Control Protocol) e UDP (User Datagram Protocol).
+- Entender o funcionamento de sockets para comunicação de rede.
+- Implementar exemplos básicos de comunicação com TCP e UDP.
+
+**Recursos:**
+- Artigos e tutoriais sobre TCP, UDP e sockets.
+
+### 4. O que é um chat cliente-servidor
+**Objetivo:** Compreender a arquitetura cliente-servidor em sistemas de chat, onde um servidor central gerencia a comunicação entre clientes.
+
+**Tarefas:**
+- Estudar como a arquitetura cliente-servidor é implementada em sistemas de chat.
+- Identificar os papéis e responsabilidades do cliente e do servidor.
+- Analisar casos de uso e exemplos de implementação.
+
+**Recursos:**
+- Documentação sobre arquitetura cliente-servidor.
+
+### 5. Planeamento do projeto
+**Objetivo:** Desenvolver um plano detalhado para o projeto, incluindo cronograma, recursos e metas.
+
+**Tarefas:**
+- Criar um cronograma detalhado com prazos e marcos.
+- Definir os recursos necessários (software, hardware, equipe).
+- Estabelecer as metas e requisitos do projeto.
+
+**Recursos:**
+- Ferramentas de gerenciamento de projetos (como Trello ou Asana).
+
+### 6. Análise dos requisitos
+**Objetivo:** Identificar e documentar os requisitos do projeto, tanto funcionais quanto não funcionais.
+
+**Tarefas:**
+- Coletar e documentar os requisitos dos usuários e do sistema.
+- Definir requisitos funcionais (como suporte a canais e comandos IRC) e não funcionais (como desempenho e segurança).
+
+**Recursos:**
+- Modelos de documentos de requisitos.
+
+### 7. Planejando a infraestrutura da rede
+**Objetivo:** Projetar a infraestrutura de rede necessária para suportar o sistema de chat.
+
+**Tarefas:**
+- Definir a topologia da rede.
+- Planejar a alocação de endereços IP e configuração de rede.
+- Considerar aspectos de escalabilidade e redundância.
+
+**Recursos:**
+- Ferramentas de planejamento de rede.
+
+### 8. Escolhendo as máquinas clientes e servidores do projeto (cli)
+**Objetivo:** Selecionar e configurar as máquinas que serão usadas como clientes e servidores.
+
+**Tarefas:**
+- Escolher as máquinas com base nos requisitos do projeto (especificações e capacidade).
+- Configurar o ambiente de desenvolvimento e produção.
+
+**Recursos:**
+- Especificações de hardware e software para clientes e servidores.
+
+### 9. Criando o servidor IRC
+**Objetivo:** Desenvolver o servidor IRC que gerenciará as conexões e as comunicações entre os clientes.
+
+**Tarefas:**
+- Implementar o servidor IRC conforme o protocolo especificado.
+- Garantir que o servidor suporte todas as funcionalidades necessárias (gerenciamento de canais, mensagens, etc.).
+
+**Recursos:**
+- [Implementando o IRC em Node.js](https://hackernoon.com/implementing-the-irc-spec-in-node-js-c630b8cd5771)
+
+### 10. Implementando o protocolo IRC para Node.js
+**Objetivo:** Programar a implementação do protocolo IRC usando Node.js.
+
+**Tarefas:**
+- Desenvolver a aplicação cliente e servidor IRC em Node.js.
+- Testar a comunicação e a conformidade com o protocolo IRC.
+
+**Recursos:**
+- Tutorial sobre IRC em Node.js.
+- Documentação do Node.js e bibliotecas relevantes.
+
+### 11. Testes
+**Objetivo:** Realizar testes para garantir que o sistema funcione conforme o esperado e identificar possíveis problemas.
+
+**Tarefas:**
+- Criar e executar testes unitários e de integração.
+- Testar a funcionalidade do chat, a comunicação entre clientes e servidores, e a conformidade com o protocolo IRC.
+
+**Recursos:**
+- Ferramentas de testes e frameworks.
+
+### 12. Criptografia entre comunicações e confirmação E2EE
+**Objetivo:** Implementar criptografia para garantir a segurança das comunicações e a confirmação de que a mensagem chegou ao destinatário certo.
+
+**Tarefas:**
+- Implementar criptografia para proteger as mensagens trocadas.
+- Adicionar confirmação de entrega e verificação de identidade para garantir a segurança end-to-end (E2EE).
+
+**Recursos:**
+- Bibliotecas de criptografia para Node.js (como `crypto` ou `crypto-js`).
+
+### 13. Serviço de VPN entre o Cliente-Servidor
+**Objetivo:** Configurar uma VPN para proteger as comunicações entre clientes e servidores, garantindo a segurança adicional.
+
+**Tarefas:**
+- Escolher e configurar uma solução de VPN adequada.
+- Testar a integração da VPN com o sistema de chat para garantir a segurança e a funcionalidade.
+
+**Recursos:**
+- Documentação de serviços de VPN e tutoriais de configuração.
